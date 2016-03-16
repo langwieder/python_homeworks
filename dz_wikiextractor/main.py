@@ -55,8 +55,8 @@ for word in words_dic:
 sorted_frequency_list = sorted(frequency_list, key=itemgetter('freq'), reverse=True)
 
 # 4. Сохранить результат в csv
-f = open('frequency_list.csv', 'w', encoding= 'utf-8')
+f = open('frequency_list.tsv', 'w', encoding= 'utf-8')
 for item in sorted_frequency_list:
-    string = item['word']+"\t" + str(item['freq']) + '\n'
+    string = '"' + item['word'] + '"' + "\t" + '"' + str(item['freq']) + '"\n'
     f.write(string)
 f.close()
